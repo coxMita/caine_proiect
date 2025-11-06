@@ -23,7 +23,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Local apps
-    'shelter',
+    'apps.core',
+    'apps.accounts',
+    'apps.pets',
+    'apps.adoptions',
+    'apps.contact',
+    'apps.dashboard',
 ]
 
 MIDDLEWARE = [
@@ -36,7 +41,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pawhaven_project.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -57,7 +62,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pawhaven_project.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 DATABASES = {
@@ -90,7 +95,7 @@ LOGOUT_REDIRECT_URL = 'home'       # after logout
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'shelter' / 'static',
+    BASE_DIR / 'static',  # Global static files
 ]
 
 # Media files
